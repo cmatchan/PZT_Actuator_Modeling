@@ -1,0 +1,5 @@
+close all
+clear
+lr = 0:.01:2;
+L = (1/2+lr)./((1-lr).^3);
+plot(lr,L);

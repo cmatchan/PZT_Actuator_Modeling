@@ -1,0 +1,24 @@
+clear
+close all
+
+load width;
+
+%experimental data:
+W=W';
+wr=wr';
+wr_temp = [1.5;2];
+W_temp = [1.22;1.35];
+std_temp = [0.03;0.16];
+W_exp = W;
+W_exp(find(wr==1.501))=W_temp(1);
+W_exp(length(W))=W_temp(2);
+std = zeros(size(W));
+std(find(wr==1.501)) = 
+figure(1);
+set(axes,'Fontsize',14);
+errorbar([wr wr_exp],[W W_exp],[zeros(size(W)) std],[zeros(size(W)) std]);
+grid on
+ylabel('Width Factor','Fontsize',20);
+xlabel('Width Ratio, w_r','Fontsize',20);
+legend('Predicted','Measured');
+%print(1, '-djpeg', 'width01.jpg');

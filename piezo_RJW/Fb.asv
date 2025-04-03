@@ -1,0 +1,25 @@
+close all
+clear
+load FVblock
+tp = 128e-6;
+
+figure(1);
+    set(axes,'Fontsize',14);
+    plot(Vin/tp*1e-6,F*1000, 'LineWidth',3);
+    ylabel('Blocked Force (mN)','Fontsize',20);
+    xlabel('Driving Field (V\mum^{-1})','Fontsize',20);
+    grid on;
+
+load FV50;
+load FV100;
+load FV150;
+load FV200;
+load FV25
+    
+figure(2);
+    set(axes,'Fontsize',14);
+    plot(Vin/tp*1e-6,F*1000, 'LineWidth',3);
+    ylabel('Blocked Force (mN)','Fontsize',20);
+    xlabel('Driving Field (V\mum^{-1})','Fontsize',20);
+    grid on;
+    

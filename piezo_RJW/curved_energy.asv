@@ -1,0 +1,25 @@
+clear all
+close
+
+energy_curvedup=[12.56; 16.20; 13.66; 18.22; 15.61]*1e-6;
+energy_flat=[14.30; 15.60; 12.39; 14.5; 11.39]*1e-6;
+energy_curveddown=[11.06; 12.08; 12.73; 11.73; 11.39]*1e-6;
+fload_curvedup=[465; 326; 455; 507; 726]*1e-3;
+fload_flat=[356; 281; 315; 316; 328]*1e-3;
+fload_curveddown=[202; 102; 274; 263; 354]*1e-3;
+
+
+figure(1);
+set(axes,'Fontsize',12);
+plot(energy_curvedup*1e6,fload_curvedup,'d',...
+    energy_flat*1e6,fload_flat,'o',...
+    energy_curveddown*1e6,fload_curveddown,'s',...
+    mean(energy_curvedup)*1e6,mean(fload_curvedup),...
+    mean(energy_curvedup)*1e6,mean(fload_curvedup),...
+    mean(energy_curvedup)*1e6,mean(fload_curvedp),...'LineWidth',2);
+axis([10 20 0 1]);
+xlabel('Energy (\mu J)','Fontsize',18);
+ylabel('Load to Failure (N)','Fontsize',18);
+grid on;
+
+legend('Mold configuration I','Molded flat','Mold configuration II');

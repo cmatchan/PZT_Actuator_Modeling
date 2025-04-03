@@ -1,0 +1,20 @@
+function [Gd,GF] = getG(wr,lr);
+
+load widthext
+
+wrmax = 2;
+lrmax = 4;
+
+wrrange = 0:wrmax/(size(Gnew,2)-1):wrmax;
+lrrange = 0:lrmax/(size(Gnew,1)-1):lrmax;
+
+GU = Gnew(round(mean(find(lrrange>(lr*0.9)&lrrange<(lr*1.1)))),round(mean(find(wrrange>(wr*0.9)&wrrange<(wr*1.1)))));
+
+Gd = (1+2*lr);
+GF = GU/Gd;
+
+syms temp;
+ga = 6*(wr-1)*(-3-2*lr+2*wr+2*lr*wr);
+gb = 3*(wr-2)*(-2-2*lr+wr+2*lr*wr)*eval(limit(log((2-temp)/temp),temp,wr));
+gc = 8*(1-wr)^3;
+gd = 6*(wr-1)*(3+4*lr-

@@ -1,0 +1,12 @@
+close all
+clear
+
+lr = [0:.01:4]';
+L = (1+2*lr).^2/(1+3*lr+3*lr.^2);
+
+figure(1);
+    set(axes,'Fontsize',14);
+    plot(lr,L, 'LineWidth',3);
+    grid on;
+    xlabel('lastic Layer Thickness (\mum)','Fontsize',20);
+    ylabel('Energy Density(J/Kg)','Fontsize',20);

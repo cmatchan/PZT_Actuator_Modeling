@@ -1,0 +1,47 @@
+function		[Nt,Mt] = thermal(dT,Qp,Qe,z,layup,ap,ae,piezoconfig)
+
+% function		[Nt,Mt] = thermal(dT,Qp,Qe,z,layup,ap,ae,piezoconfig)
+%		extracts the thermal forces and moments (per unit
+%		width) as a function of the temperature change (dT),
+%		the 4 X 1 matrix Q containing the physical properties 
+% 		of the elastic layer, the thicknesses, t, of the n layers, 
+% 		and the coeffiecients of thermal expansion, a 3 X 1
+% 		matrix a.
+
+len = length(z);
+Nt = zeros(3,1);
+Mt = zeros(3,1);
+
+nelasticlayers = length(layup);
+npiezolayers = size(zn,1) - nelasticlayers;
+
+% if the actuator is a bimorph...
+if piezoconfig,
+    % include piezo layers first...
+    Nt = Qp*(zn(1,1)+zn(size(zn,1),1))*ap*dT;
+	Mt = Qp*(zn(1,2)+zn(size(zn,1),2))*ap*dT/2;
+else
+    % the actautor is a unimorph add each piezoelectric
+    % layers first...
+    for n = nelasticlayers+1:nelasticlayers+npiezolayers,
+        Nt = Nt + Qp*zn(n,1)*ap*dT;
+        Mt = Mt + Qp*zn(n,2)*ap*dT/2;
+    end
+end
+
+% then do the elastic layers...
+for i = (di+1):len,
+   Nt = Nt + trotate(Qe,layup(i-di)*pi/180)*arotate(ae,layup(i-di)*pi/180)*dT*t(i);
+   Mt = Mt + trotate(Qe,layup(i-di)*pi/180)*arotate(ae,layup(i-di)*pi/180)*dT*t(i)*zbar(i);
+end
+
+% ... then all other layers
+for m = 1:nelasticlayers,
+    angle = layup(m)*pi/180;  % ply angle
+    Qbarelastic = trotate(Qelastic,angle);
+    Nt = Nt + Qbarelastic*zn(m+piezoconfig,1)*arotate(ae,angle)*dT;
+    Mt = Mt + Qbarelastic*zn(m+piezoconfig,2)*arotate(ae,angle;
+end
+
+Nt = Nt*dT;
+Mt = Mt*dT;
