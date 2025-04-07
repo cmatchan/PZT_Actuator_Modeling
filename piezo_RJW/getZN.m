@@ -20,4 +20,12 @@ for i = 1:length(z),
     zn2(i) = ztemp(i+1)^2-ztemp(i)^2;
     zn3(i) = ztemp(i+1)^3-ztemp(i)^3;
 end
+
+% ztemp
+% zn1
+% zn2
+% zn3
+% diff(ztemp)
+% diff(ztemp.^2)
+% diff(ztemp.^3)
 zn = [zn1' zn2' zn3'];

@@ -31,6 +31,10 @@ end
 nelasticlayers = length(layup);
 npiezolayers = size(zn,1) - nelasticlayers;
 
+size(zn, 1)
+% nelasticlayers
+% npiezolayers
+
 A = zeros(3,3);
 B = zeros(3,3);
 D = zeros(3,3);
@@ -51,6 +55,10 @@ else
     end
 end
 
+% A
+% B
+% D
+
 % ... then all other layers
 for m = 1:nelasticlayers,
     angle = layup(m)*pi/180;  % ply angle
@@ -62,3 +70,9 @@ end
 
 B = B/2;
 D = D/3;
+
+% A
+% B
+% D
+% 
+% A

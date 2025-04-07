@@ -67,9 +67,9 @@ npiezolayers = length(newz) - length(layup) - piezoconfig;
 [Np,Mp] = piezoelectric(V,Qp,zn,d31,npiezolayers);
 
 % now get mid plane strains and curvature
-stiffness = [A B;B D];
-C = inv(stiffness);
-P = ( C(4,1)*Np(1) + C(4,2)*Np(2) + C(4,4)*Mp(1) + C(4,5)*Mp(2) );
+stiffness = [A B;B D]
+C = inv(stiffness)
+P = ( C(4,1)*Np(1) + C(4,2)*Np(2) + C(4,4)*Mp(1) + C(4,5)*Mp(2) )
 
 % extract actuator displacement from radius of curvature
 delta = -(P*l^2/2) * G(1) * (1+piezoconfig);
@@ -78,3 +78,9 @@ delta = -(P*l^2/2) * G(1) * (1+piezoconfig);
 Fb = -(3*P*wnom)/(2*l*C(4,4)) * G(2) *(1+piezoconfig);
 
 k = abs(Fb/delta);
+
+delta
+Fb
+k
+
+delta

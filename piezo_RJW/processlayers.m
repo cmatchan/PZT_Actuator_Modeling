@@ -40,6 +40,11 @@ for i = midlayer+1:length(newplyt),
     newz(i) = sum(newplyt(midlayer+1:i));
 end
 
+% plyt
+% zmid
+% plyh
+% newplyt
+% newz
 newz = newz';
 
 % now adjust the layup appropriately
@@ -52,3 +57,7 @@ else
    % neutral axis cuts through the elastic layer
    layup = [0;0];%[oldlayup(1)*[1:midlayer];oldlayup(midlayer);oldlayup(midlayer+1:length(oldlayup))];
 end
+
+layup
+
+disp("here")
