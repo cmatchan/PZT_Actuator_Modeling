@@ -11,3 +11,11 @@ Glext = (gd+ge)/gc;
 Gl = (ga+gb)/gc;
 GF = (1+2*lr)/Glext;
 Gd = (1+2*lr);
+
+ga
+gb
+gc
+gd
+ge
+Gd
+GF

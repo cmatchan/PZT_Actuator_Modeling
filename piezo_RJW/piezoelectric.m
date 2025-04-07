@@ -36,3 +36,6 @@ else
         Mp = Mp + Qp*[d31;d31;0]*V*(zn(len-n+1,2)/zn(len-n+1,1))/2;
     end
 end
+
+Np
+Mp

@@ -40,7 +40,7 @@ layup = [0];
 % drive parameters
 roomtemp = 20;
 curetemp = 120;
-V = 300;
+V = 200; %300;
 
 % analysis of s-glass, UHM, silicon, and steel 
 t = 1e-6:2e-6:2*thickness.PZT;

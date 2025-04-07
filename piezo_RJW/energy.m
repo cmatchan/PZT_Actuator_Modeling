@@ -82,5 +82,3 @@ k = abs(Fb/delta);
 delta
 Fb
 k
-
-delta
