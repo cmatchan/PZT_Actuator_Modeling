@@ -1,9 +1,9 @@
 % piezo strain calculations
 % for unidirectional s-glass fibers, 
 % and for UHM carbon fiber elastic layers
-close all;
-clear;
-clc;
+% close all;
+% clear;
+% clc;
 
 % Actuator geometry
 geometry;
