@@ -24,7 +24,10 @@ wr = temp.wr;
 
 % for the given width ratio, find what the width factor is
 % first determine which value of 'wr' is closest to 'ratio'
-index = find(ratio==wr);
-
+for n = 1:length(wr),
+    if ratio > wr(n),
+        index = n;
+    end
+end
 
 Widthfactor = W(index);
