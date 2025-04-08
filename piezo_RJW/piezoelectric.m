@@ -37,5 +37,8 @@ else
     end
 end
 
+zn
+Qp
+abs(zn(len,2)/zn(len,1))
 Np
 Mp

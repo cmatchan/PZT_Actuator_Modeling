@@ -43,12 +43,12 @@ for i = midlayer+1:length(newplyt),
     newz(i) = sum(newplyt(midlayer+1:i));
 end
 
-% plyt
-% zmid
-% plyh
-% newplyt
+plyt
+zmid
+plyh
+newplyt
 % newz
-newz = newz';
+newz = newz'
 
 % now adjust the layup appropriately
 % if the neutral axis cuts through the last layer (piezo)
