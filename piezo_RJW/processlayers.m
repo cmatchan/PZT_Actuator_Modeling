@@ -22,8 +22,11 @@ for i = 1:length(plyt),
     plyh(i) = sum(plyt(1:i));
 end
 
+zmid
+plyh
+
 % decide which layer the midplane cuts through
-midlayer = min(find(plyh>zmid));
+midlayer = min(find(plyh>zmid))
 if midlayer==1,
     newplyt = [zmid;plyh(1)-zmid;plyt(2:length(plyt))];
 else
@@ -59,5 +62,3 @@ else
 end
 
 layup
-
-disp("here")

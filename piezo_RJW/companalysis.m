@@ -59,7 +59,8 @@ for i = 1:length(t),
     % mass:
     % extension mass (assuming extension is reinforced with 120um of sglass)...
     % extension reinforcement is slightly wider than wnom*(2-wr)
-    wcorrect = 1.5;
+    % wcorrect = 1.5;
+    wcorrect = 1;
     mass_UHM_ext = l*lr*wnom*(2-wr)*t(i)*density.UHM + 240e-6*wnom*(2-wr)*l*lr*density.SGlass*wcorrect;
     mass_s_ext = l*lr*wnom*(2-wr)*t(i)*density.SGlass + 240e-6*wnom*(2-wr)*l*lr*density.SGlass*wcorrect;
     mass_st_ext = l*lr*wnom*(2-wr)*t(i)*density.steel + 240e-6*wnom*(2-wr)*l*lr*density.SGlass*wcorrect;
