@@ -42,9 +42,13 @@ D = zeros(3,3);
 % if the actuator is a bimorph...
 if piezoconfig,
     % include piezo layers first...
-    A = Qpiezo*(zn(1,1)+zn(size(zn,1),1));
-	B = Qpiezo*(zn(1,2)+zn(size(zn,1),2));
-    D = Qpiezo*(zn(1,3)+zn(size(zn,1),3));
+    zn(size(zn,1),1)
+    zn(size(zn,1),2)
+    zn(size(zn,1),3)
+    Qpiezo
+    A = Qpiezo*(zn(1,1)+zn(size(zn,1),1))
+	B = Qpiezo*(zn(1,2)+zn(size(zn,1),2))
+    D = Qpiezo*(zn(1,3)+zn(size(zn,1),3))
 else
     % the actautor is a unimorph add each piezoelectric
     % layers first...

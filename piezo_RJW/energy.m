@@ -54,6 +54,8 @@ else % else, if a unimorph...
     plyt = [te*ones(size(layup));tp];
 end
 
+plyt
+
 [newz,layup] = processlayers(plyt,layup);
 
 % now get z(n)-z(n-1)...
