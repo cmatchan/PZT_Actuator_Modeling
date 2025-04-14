@@ -50,6 +50,10 @@ piezomass = l*wnom*tp*densityp*(1+piezoconfig);
 
 G = [Gd,GF];
 
+% test energy function
+te = 40e-6
+[delta,Fb,k] = energy(w,lentotal,[tp te],Qp,QUHM,V,d31,layup,G)
+
 for i = 1:length(t),
     % mechanical energy
     [delta.UHM(i),Fb.UHM(i),k.UHM(i)] = energy(w,lentotal,[tp t(i)],Qp,QUHM,V,d31,layup,G);
